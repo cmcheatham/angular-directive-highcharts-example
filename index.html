@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html ng-app="myModule">
+<head>
+    <meta charset="utf-8"/>
+    <title> Highcharts directive demo </title>
+    <!--THIRD PARTY SCRIPTS -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+    <script type="text/javascript" src="https://code.highcharts.com/highcharts.js"></script>
+    <!-- ANGULAR SCRIPTS -->
+    <script type="text/javascript" src="hc-chart.js"></script>
+    <script type="text/javascript" src="flightDataService.js"></script>
+    <script type="text/javascript" src="hc-pie-chart.js"></script>
+    <script type="text/javascript" src="analyticsCtrl.js"></script>
+
+</head>
+<body ng-controller="analyticsController as flightdata">
+    <h1>ANALYTICS/HIGHCHARTS DIRECTIVE DEMO</h1>
+    <h3>by Caleb Cheatham</h3>
+    <hc-chart ng-if="flightdata.chartOptions" options="flightdata.chartOptions" style="margin: 0; padding: 0;">Placeholder for generic chart</hc-chart>
+    <hc-pie-chart ng-if="flightdata.pieData" title="Gas Consumption by Engine gal./1000kms" data="flightdata.pieData" style="">Placeholder for pie chart</hc-pie-chart>
+</body>
+</html>
